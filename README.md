@@ -1,13 +1,12 @@
 # Bulldog
-[Drupal VM](https://www.drupalvm.com/)
 
 ## Documentation
 
-This version of Drupalvm is configured to run on Windows 10 and to install a drupal 8 site.
+This DrupalVM creates a Drupal 8 site and development environment on Windows 10.
 
-The site is accessed at: [http://drupal8vm.test/](http://drupalvm.8.abc.local/)
+The site is accessed at: [http://drupal8vm.test](http://drupal8vm.test)
 
-1. Clone the repository to your home folder on Windows 10
+1. Clone repository to home folder on Windows 10
 2. Open git bash command line (do not run as admin)
 3. Navigate inside the folder
 4. Run:
@@ -64,3 +63,6 @@ There are two ways to install contributed modules:
 - copy it into modules/contrib/
 - if there is no 'contrib' folder it is useful to create one and also a 'custom' folder 
 - this organises your modules
+
+### Further information
+[Drupal VM](https://www.drupalvm.com/)
