@@ -2,33 +2,52 @@
 
 ## Documentation
 
-This DrupalVM creates a Drupal 8 site and development environment on Windows 10.
+This version of Drupalvm is configured to run on Windows 10 and to install a drupal 8 site.
 
-The site is accessed at: [http://drupal8vm.test](http://drupal8vm.test)
+The site is accessed at: [http://drupal8vm.test/](http://drupal8vm.test/)
 
-1. Clone repository to home folder on Windows 10
+1. Clone the repository to your home folder on Windows 10
 2. Open git bash command line (do not run as admin)
 3. Navigate inside the folder
 4. Run:
 ```
 vagrant up
 ```
-I ran into an error message after 'vagrant up' completed. Even so the box was up and i could access the site.
-
-But the site was not fully configured. :-1:
-
-So, I returned to git bash and ran:
+When that completes:
 ```
-vagrant up --provision
+vagrant provision
 ```
-a couple of times.
+When complete run:
+```
+vagrant ssh
+```
+Then:
+```
+cd /var/www/drupalvm/drupal
+```
+and
+```
+composer require drush/drush
+```
+when complete:
 
-Then everything worked. :smiley_cat:
+```
+logout
+```
+then:
+```
+vagrant provision
+```
+```
+vagrant up
+```
+If everything worked you can now login to a fresh Drupal 8 site.
+The devel module, drupal console and drush 9 are ready to use. :smiley_cat:
 
 ### First tasks
 
 1. Create a new PHPStorm project from existing files. Navigate to repo folder.
-Use that as the root but the site docroot is the drupal/web folder inside the repo.
+Use that as the root but the site docroot is the drupal folder inside the repo.
 
 2. Run:
 ```
@@ -63,6 +82,3 @@ There are two ways to install contributed modules:
 - copy it into modules/contrib/
 - if there is no 'contrib' folder it is useful to create one and also a 'custom' folder 
 - this organises your modules
-
-### Further information
-[Drupal VM](https://www.drupalvm.com/)
